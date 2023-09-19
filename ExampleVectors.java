@@ -20,7 +20,10 @@ public class ExampleVectors {
 
         var result = Vectors.scalarMultiply(v1, scalar);
 
-        System.out.println(result); // Выведет вектор [2.0, 4.0, 6.0]
+        System.out.println("Вывод примера умножения"); 
+        for(int i = 0; i < result.size(); i++){
+            System.out.println(result.get(i)); 
+        }
     }
     
     public void addVectors(){
@@ -29,7 +32,10 @@ public class ExampleVectors {
 
         var result = Vectors.add(v1, v2);
 
-        System.out.println(result); // Выведет вектор [2.0, 4.0, 6.0]
+        System.out.println("Вывод примера сложения"); 
+        for(int i = 0; i < result.size(); i++){
+            System.out.println(result.get(i)); 
+        }
     }
 
     public void dotProduct(){
@@ -38,6 +44,7 @@ public class ExampleVectors {
 
         var result = Vectors.dotProduct(v1, v2);
 
+        System.out.println("Вывод примера нахождение скалярного произведения двух векторов"); 
         System.out.println(result); // Выведет вектор [2.0, 4.0, 6.0]
     }
 
@@ -107,7 +114,10 @@ public class ExampleVectors {
         // Пример использования readVector
         try (Reader reader = new FileReader("vector_output.txt")) {
             var readVector = Vectors.readVector(reader);
-            System.out.println("Vector read from text file: " + readVector);
+            System.out.println("Vector read from text file:" );
+            for(int i = 0; i < readVector.size(); i++){
+                System.out.println(readVector.get(i)); 
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -130,7 +140,10 @@ public class ExampleVectors {
         // Пример использования inputVector
         try (InputStream inputStream = new FileInputStream("vector_output.dat")) {
             var readVector = Vectors.inputVector(inputStream);
-            System.out.println("Vector read from file: " + readVector);
+            System.out.println("Vector read from text file:" );
+            for(int i = 0; i < readVector.size(); i++){
+                System.out.println(readVector.get(i)); 
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
